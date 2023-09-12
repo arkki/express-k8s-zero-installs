@@ -4,8 +4,9 @@ USER node
 WORKDIR /app
 
 COPY --chown=node . .
-# RUN yarn install && yarn cache clean
-# RUN yarn install --frozen-lockfile --production && yarn cache clean
-RUN yarn install --immutable --immutable-cache && yarn cache clean
 
+RUN yarn install --immutable --immutable-cache
+
+# FIXME: Don't use 'yarn start' in prodKubernetes.
+# It can mess the SIGTERM and SIGKILL signals
 CMD ["yarn", "start"]

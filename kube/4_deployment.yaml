@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-zero-deployment
+  namespace: express-zero-ns
+  labels:
+    app: express-zero
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-zero
+  template:
+    metadata:
+      labels:
+        app: express-zero
+    spec:
+      containers:
+      - name: express-zero
+        image: arkki/express-zero:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP

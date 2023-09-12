@@ -3,9 +3,11 @@
   "packageManager": "yarn@3.6.3",
   "scripts": {
     "start": "node ./app/server.js",
-    "build:docker": "docker build -t arkki/express-zero .",
+    "build": "docker build -t arkki/express-zero .",
+    "push": "docker push arkki/express-zero",
     "kube:apply": "kubectl apply -f ./kube",
-    "kube:delete": "kubectl delete -f ./kube"
+    "kube:delete": "kubectl delete -f ./kube",
+    "kube:logs": "kubectl logs -f -l app=express-zero --all-containers=true"
   },
   "dependencies": {
     "express": "^4.18.2"
