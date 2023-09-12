@@ -140,9 +140,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express-zero-installs@workspace:.":
+"express-k8s-zero-installs@workspace:.":
   version: 0.0.0-use.local
-  resolution: "express-zero-installs@workspace:."
+  resolution: "express-k8s-zero-installs@workspace:."
   dependencies:
     express: ^4.18.2
   languageName: unknown
