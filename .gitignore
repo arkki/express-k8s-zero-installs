@@ -49,10 +49,6 @@
 #
 # -----------------------------------------------------------------
 
-# ignore all files starting with . or ~
-.*
-~*
-
 # ignore node/grunt dependency directories
 node_modules/
 
@@ -106,6 +102,11 @@ Thumbs.db
 *.key
 *.pem
 
+
+
+# ignore all files starting with . or ~
+.*
+~*
 # --------------------------------------------------------
 # BEGIN Explictly Allowed Files (i.e. do NOT ignore these)
 # --------------------------------------------------------
@@ -117,3 +118,4 @@ Thumbs.db
 !.gitignore
 !.nvmrc
 !.phpcs.xml.dist
+!.yarn
